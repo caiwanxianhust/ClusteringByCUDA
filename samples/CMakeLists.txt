@@ -2,6 +2,10 @@ set (sample_kmeans_fp32_files
     kmeans_fp32.cpp
 )
 
+set (sample_kmeans_fp64_files
+    kmeans_fp64.cpp
+)
+
 set (sample_fuzzyCmeans_fp32_files
     fuzzyCmeans_fp32.cpp
 )
@@ -34,6 +38,9 @@ message("-- Assign include directories (include_directories=${SAMPLES_HEADER_DIR
 
 target_link_libraries(kmeans_fp32 PUBLIC -lkmeans)
 
+add_executable(kmeans_fp64 ${sample_kmeans_fp64_files})
+target_compile_features(kmeans_fp64 PUBLIC cxx_std_14)
+target_link_libraries(kmeans_fp64 PUBLIC -lkmeans)
 
 add_executable(fuzzyCmeans_fp32 ${sample_fuzzyCmeans_fp32_files})
 target_compile_features(fuzzyCmeans_fp32 PUBLIC cxx_std_14)

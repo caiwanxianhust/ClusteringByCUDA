@@ -92,7 +92,7 @@ void launchFit(const DataType *d_data, DataType *d_clusters, float *d_membership
 
 
 template <typename DataType>
-FuzzyCmeans<DataType>::FuzzyCmeans(DataType *h_membership, int num_clusters, int num_features, int num_samples, float scale, int max_iters) :
+FuzzyCmeans<DataType>::FuzzyCmeans(float *h_membership, int num_clusters, int num_features, int num_samples, float scale, int max_iters) :
     m_num_clusters(num_clusters), m_num_features(num_features), m_num_samples(num_samples), m_scale(scale), m_max_iters(max_iters), 
     m_optTarget(1e7f), m_eplison(1e-10f)
 {

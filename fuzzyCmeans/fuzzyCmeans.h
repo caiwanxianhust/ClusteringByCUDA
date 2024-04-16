@@ -17,7 +17,7 @@ template <typename DataType>
 class FuzzyCmeans : public AbstractFuzzyCmeans<DataType>
 {
 public:
-    FuzzyCmeans(DataType *h_membership, int num_clusters, int num_features, int num_samples, float scale, int max_iters = 50);
+    FuzzyCmeans(float *h_membership, int num_clusters, int num_features, int num_samples, float scale, int max_iters = 50);
     virtual ~FuzzyCmeans();
     void fit(const DataType *v_data);
 
